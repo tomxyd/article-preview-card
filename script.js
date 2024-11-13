@@ -5,6 +5,7 @@ var shareButton = document.getElementById("share");
 var shareDisplay = document.getElementById("share-block");
 
 function displayShareSection() {
+     
      var status = profileInfo.style.display;
      if (status != "none") {
           profileInfo.style.display = "none";

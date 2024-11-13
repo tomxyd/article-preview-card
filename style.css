@@ -12,13 +12,18 @@
 *::before {
      box-sizing: border-box;
 }
-
+* {
+     margin: 0;
+}
 html,
 body {
      min-height: 100vh;
      margin: 0;
      padding: 0;
      background-color: var(--light-Grayish-Blue);
+}
+img {
+     display: block;
 }
 
 body {
@@ -33,19 +38,24 @@ body {
 
 #drawers-picture {
      max-width: 100%;
-     border-top-left-radius: 16px;
-     border-top-right-radius: 16px;
+     min-width: 21em;
+     height: 100%;
+     border-radius: 16px 16px 0 0;
+     object-fit: cover;
 }
 
 main {
      background-color: white;
-     height: 72vh;
      width: 85%;
+     max-width: 30em;
      border-radius: 16px;
 }
 
 .article-info {
+     display: flex;
+     flex-direction: column;
      padding: 30px;
+     row-gap: 1em;
 }
 h1 {
      font-size: 1.4em;
@@ -56,23 +66,28 @@ h1 {
 
 p {
      font-weight: 500;
-     font-size: 1.3em;
+     font-size: 1.2em;
      color: var(--desaturated-dark-Blue);
      line-height: 150%;
 }
 
 #profile-info {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
      margin-top: 20px;
 }
+.template {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+}
+
 #profile-pic {
      width: 46px;
      height: 46px;
      border-radius: 50px;
      float: left;
-}
-
-.profile-text {
-     margin-left: 60px;
 }
 
 .profile-name {
@@ -89,43 +104,33 @@ p {
      border: none;
      background-color: var(--light-Grayish-Blue);
      padding: 10px;
-     position: absolute;
-     left: 270px;
-     top: 700px;
      border-radius: 50px;
-     margin-left: 3em;
+     justify-self: flex-end;
 }
 
 #share-block {
      background-color: var(--Very-Dark-Grayish-Blue);
      display: none;
-     flex-direction: row;
-     padding: 5px;
+     padding: 2em;
      align-items: center;
-     row-gap: 2em;
-     justify-content: left-center;
-     margin-top: -10px;
-     border-bottom-left-radius: 16px;
-     border-bottom-right-radius: 16px;
+     column-gap: 20px;
+     border-radius: 0 0 1em 1em;
 }
 
 #share-block p {
      letter-spacing: 0.25em;
-     margin-left: 2em;
 }
 
 .share-icons {
-     margin-left: 1em;
      width: 26px;
      height: 26px;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1150px) {
      main {
           display: flex;
           flex-direction: row;
-          height: 37vh;
-          width: 40vw;
+          max-width: 50%;
      }
 
      .article-picture {
@@ -137,5 +142,9 @@ p {
           border-top-left-radius: 16px;
           border-bottom-left-radius: 16px;
           border-top-right-radius: 0px;
+     }
+
+     #share-block {
+          position: absolute;
      }
 }
