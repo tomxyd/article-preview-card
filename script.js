@@ -1,19 +1,27 @@
 //on share icon pressed
 //get id share
-var profileInfo = document.getElementById("profile-info");
+var profile = document.querySelector(".profile");
 var shareButton = document.getElementById("share");
-var shareDisplay = document.getElementById("share-block");
+var secondShareButton = document.getElementById("share-1");
+var socials = document.querySelector(".socials");
+var screenWidth = window.innerWidth;
 
-function displayShareSection() {
-     
-     var status = profileInfo.style.display;
-     if (status != "none") {
-          profileInfo.style.display = "none";
-          shareDisplay.style.display = "flex";
+window.onresize = window.onload = function () {
+     screenWidth = this.innerWidth;
+     socials.classList.add("hidden");
+     profile.classList.remove("hidden");
+     secondShareButton.classList.remove("hidden");
+};
+
+function toggle() {
+     if (screenWidth <= 1039) {
+          profile.classList.toggle("hidden");
+          socials.classList.toggle("hidden");
      } else {
-          profileInfo.style.display = "block";
-          shareDisplay.style.display = "none";
+          socials.classList.toggle("hidden");
+          secondShareButton.classList.toggle("hidden");
      }
 }
-
-shareButton.addEventListener("click", displayShareSection);
+//get width of html page
+shareButton.addEventListener("click", toggle);
+secondShareButton.addEventListener("click", toggle);
